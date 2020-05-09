@@ -32,18 +32,12 @@ THEN the text for that event is saved in local storage
 WHEN I refresh the page
 THEN the saved events persist
 ```
+# Installation:
 
-The following animation demonstrates the application functionality:
+* Visit https://github.com/loc-koan/day-planner to see the final product or
 
-![day planner demo](./Assets/05-third-party-apis-homework-demo.gif)
+* Clone my repository at git@github.com:loc-koan/day-planner.git to view its code
 
-## Review
-
-You are required to submit the following for review:
-
-* The URL of the deployed application.
-
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
-
-- - -
-© 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
+# References:
+* https://momentjs.com/
+* 
