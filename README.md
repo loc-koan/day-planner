@@ -40,4 +40,5 @@ WHEN I refresh the page
 
 # References:
 * https://momentjs.com/
+* https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
 * 
