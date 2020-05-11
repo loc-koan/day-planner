@@ -1,7 +1,7 @@
 // location of scripts
 
-//$("#currentDay").text(moment().format("YYYY MMMM Do"));/* for moment to work, it had to be referneced in this file too */
-//document.getElementById("currentDay").innerHTML = Date();
+//$("#currentDay").text(moment().format("YYYY MMMM Do")); /* find out why this does not work in js file */
+//document.getElementById("currentDay").innerHTML = Date(); /* works but using jquery above/in html file*/ 
 //document.write(Date());  -- write will overwrite entire document
 
 

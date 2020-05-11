@@ -87,6 +87,7 @@
       // adding date under heading
       $("#currentDay").text(moment().format("YYYY MMMM Do"));
 
+      // check if what moment spits out
       console.log(moment());
       console.log(typeof(moment()));
       
@@ -98,13 +99,19 @@
         // var currentTime = moment().hours();
         var hourBlock = parseInt($(this).attr("id"));
 
-        if (currentTime > hourBlock) {
-          $(".hour").addClass("past");
+        if (currentTime > hourBlock) { /* odd that after $ classes need . but after addClass, it does not need . */
+          $("textarea").addClass("past"); 
         } else if (currentTime === hourBlock) {
-          $(".hour").addClass("present");
+          $("textarea").addClass("present");
         } else {
-          $(".hour").addClass("future");
+          $("textarea").addClass("future");
         }
+
+      // save button
+      $(".saveBtn").onclick(function() {
+        
+      }
+
       })
     </script>
     
