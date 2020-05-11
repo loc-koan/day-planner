@@ -83,15 +83,20 @@
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script>
+      
+      // adding date under heading
       $("#currentDay").text(moment().format("YYYY MMMM Do"));
+
       console.log(moment());
       console.log(typeof(moment()));
       
+      var currentTime = moment().hours();
+
       // to color code timeblock - use military time 
-      $("time-block").each(function() {
+      $(".time-block").each(function() {
         
-        let currentTime = moment().hours();
-        let hourBlock = parseInt($(this).attr("id"));
+        // var currentTime = moment().hours();
+        var hourBlock = parseInt($(this).attr("id"));
 
         if (currentTime > hourBlock) {
           $(".hour").addClass("past");
