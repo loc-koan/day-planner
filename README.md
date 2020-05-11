@@ -1,37 +1,10 @@
 # day-planner
-day planner for homework 5
+personal day planner for a busy lifestyle
 
-# 05 Third-Party APIs: Work Day Scheduler
+# Description
 
-Create a simple calendar application that allows the user to save events for each hour of the day. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
+This website is a personal day planner.  The user will notice that the current date is displayed at the top and hourly time slots are color coded (between past, present, and future).  The user can write information into the planner and it will be stored locally (using jQuery).  References below.
 
-You'll need to use the [Moment.js](https://momentjs.com/) library to work with date and time. Be sure to read the documentation carefully and concentrate on using Moment.js in the browser.
-
-## User Story
-
-```
-AS AN employee with a busy schedule
-I WANT to add important events to a daily planner
-SO THAT I can manage my time effectively
-```
-
-## Acceptance Criteria
-
-```
-GIVEN I am using a daily planner to create a schedule
-WHEN I open the planner
-	THEN the current day is displayed at the top of the calendar
-WHEN I scroll down
-	THEN I am presented with timeblocks for standard business hours
-WHEN I view the timeblocks for that day
-	THEN each timeblock is color coded to indicate whether it is in the past, present, or future
-WHEN I click into a timeblock
-	THEN I can enter an event
-WHEN I click the save button for that timeblock
-	THEN the text for that event is saved in local storage
-WHEN I refresh the page
-	THEN the saved events persist
-```
 # Installation:
 
 * Visit https://github.com/loc-koan/day-planner to see the final product or
@@ -40,5 +13,14 @@ WHEN I refresh the page
 
 # References:
 * https://momentjs.com/
-* https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
-* 
+* https://www.w3schools.com/
+* https://developer.mozilla.org/
+* https://api.jquery.com/
+* https://getbootstrap.com/docs/4.4/getting-started/introduction/
+* https://www.youtube.com/watch?v=ieIzNP6gKqU
+* https://www.youtube.com/watch?v=gvicrj31JOM
+* https://www.youtube.com/watch?v=zE9iro4r918
+* https://www.youtube.com/watch?v=NV9sHLX-jZU
+* https://www.youtube.com/watch?v=YOlr79NaAtQ
+* https://www.youtube.com/watch?v=k8yJCeuP6I8
+* https://www.youtube.com/watch?v=T9GWHFDcELQ

@@ -45,13 +45,19 @@ $(document).ready(function () { /* adding this makes sure javascript fully check
         }
     });
 
-    $(".btn").on("click",function() {
+    $(".btn").on("click",function() { /* click not onclick...*/ 
         var savedWords = $(this).parent().prev().val();
-        var specificWords = $(this).attr("id");
+        var wordsLocation = $(this).attr("id");
         if (savedWords === "") {
             return;
         }
-    });
 
-    // localStorage.setItem(, JSON.stringify(events));
+        var savedInfo = {
+            input: savedWords,
+            location: wordsLocation
+        };
+
+        save.push(savedInfo);
+        localStorage.setItem("savePoint", JSON.stringify(save));
+    });
 });
