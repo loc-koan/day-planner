@@ -27,16 +27,31 @@ $(document).ready(function () { /* adding this makes sure javascript fully check
         } else {
           $(".description").addClass("future");
         }
-  
       })
 
     // save buttons
-    //   $(".saveBtn").click(function() { /* click not onclick */
-    //     var timeArea = $(this).parent().attr("id");
-    //     var enteredText = $(this).siblings(".description").val();
-    //     localStorage.setItem("timeArea", "enteredText"); /* in between parenthesis is name/key and its value */
+    var save = []; /* blank array for multiple data */
+    var savePoint = JSON.parse(localStorage.getItem("savePoint"));
 
-    //   })
+    if (savePoint !== null) {/* excluding empty*/
+        save = savePoint;
+    }
+
+    $(".btn").each(function() {
+        for (var i = 0; i < save.length; i++) {
+            if($(this).attr("id") === save[i].location) {
+                $(this).parent().prev().val(save[i].input);
+            }
+        }
+    });
+
+    $(".btn").on("click",function() {
+        var savedWords = $(this).parent().prev().val();
+        var specificWords = $(this).attr("id");
+        if (savedWords === "") {
+            return;
+        }
+    });
 
     // localStorage.setItem(, JSON.stringify(events));
 });
