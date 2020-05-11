@@ -1,40 +1,35 @@
-// location of scripts
+$(document).ready(function () { /* adding this makes sure javascript fully checked/ran before executing */
 
-//$("#currentDay").text(moment().format("YYYY MMMM Do")); /* find out why this does not work in js file */
-//document.getElementById("currentDay").innerHTML = Date(); /* works but using jquery above/in html file*/ 
-//document.write(Date());  -- write will overwrite entire document
+  // adding date under heading
+  $("#currentDay").text(moment().format("YYYY MMMM Do")); /* moment website / document was painfully long*/ 
 
+  // check what moment spits out and is working
+  console.log(moment());
+  console.log(typeof(moment()));
+  
+  var currentTime = moment().hour(); /* time changes so should be var*/
+  console.log(currentTime); /* tells current hour */
 
+  // color code timeblocks
+  
+//   function timeReview () {
+//     if(currentTime.isBefore(currentTime)){
+//       xxxxx.attr("class", "past");
+//     } else if (xxxx === currentHour) {
+//       xxxxx.attr("class", "present");
+//     } else (xxxxx.isAfter(xxxxx)) {
+//       xxxxx.attr("class", "future");
+//     }
+//   }
+//   timeReview(); /* runs function */
 
+  // save buttons
+//   $(".saveBtn").click(function() { /* click not onclick */
+//     var timeArea = $(this).parent().attr("id");
+//     var enteredText = $(this).siblings(".description").val();
+//     localStorage.setItem("timeArea", "enteredText"); /* in between parenthesis is name/key and its value */
 
+//   })
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{/* <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> */}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js" 
-integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" 
-crossorigin="anonymous">
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  // localStorage.setItem(, JSON.stringify(events));
+});
