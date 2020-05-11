@@ -8,10 +8,10 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
       crossorigin="anonymous"
-    />
+    /> -->
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
@@ -23,7 +23,9 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+
     <title>Work Day Scheduler</title>
+
   </head>
 
   <body>
@@ -32,55 +34,74 @@
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead"></p>
     </header>
+
     <div class="container">
 
       <div class="row time-block" id="nine" >
-        <textarea class="col hour">9:00 AM</textarea>
+        <textarea class="col description hour">9:00 AM</textarea>
         <button class="col-1 btn saveBtn">Save</button>
       </div>
       <div class="row time-block" id="ten" >
-        <textarea class="col hour">10:00 AM</textarea>
+        <textarea class="col description hour">10:00 AM</textarea>
         <button class="col-1 btn saveBtn">Save</button>
       </div>
       <div class="row time-block" id="eleven" >
-        <textarea class="col hour">11:00 AM</textarea>
+        <textarea class="col description hour">11:00 AM</textarea>
         <button class="col-1 btn saveBtn">Save</button>
       </div>
       <div class="row time-block" id="twelve" >
-        <textarea class="col hour">12:00 PM</textarea>
+        <textarea class="col description hour">12:00 PM</textarea>
         <button class="col-1 btn saveBtn">Save</button>
       </div>
       <div class="row time-block" id="one" >
-        <textarea class="col hour">1:00 PM</textarea>
+        <textarea class="col description hour">1:00 PM</textarea>
         <button class="col-1 btn saveBtn">Save</button>
       </div>
       <div class="row time-block" id="two" >
-        <textarea class="col hour">2:00 PM</textarea>
+        <textarea class="col description hour">2:00 PM</textarea>
         <button class="col-1 btn saveBtn">Save</button>
       </div>
       <div class="row time-block" id="three" >
-        <textarea class="col hour">3:00 PM</textarea>
+        <textarea class="col description hour">3:00 PM</textarea>
         <button class="col-1 btn saveBtn">Save</button>
       </div>
       <div class="row time-block" id="four" >
-        <textarea class="col hour">4:00 PM</textarea>
+        <textarea class="col description hour">4:00 PM</textarea>
         <button class="col-1 btn saveBtn">Save</button>
       </div>
       <div class="row time-block" id="five" >
-        <textarea class="col hour">5:00 PM</textarea>
+        <textarea class="col description hour">5:00 PM</textarea>
         <button class="col-1 btn saveBtn">Save</button>
       </div>
 
     </div>
-    <script src="script.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- <script src="script.js"></script> -->
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js" 
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" 
+      crossorigin="anonymous">
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <!-- <script>
+    <script>
       $("#currentDay").text(moment().format("YYYY MMMM Do"));
-      console.log(moment())
-    </script> -->
-    <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> -->
+      console.log(moment());
+      console.log(typeof(moment()));
+      
+      // to color code timeblock - use military time 
+      $("time-block").each(function() {
+        
+        let currentTime = moment().hours();
+        let hourBlock = parseInt($(this).attr("id"));
+
+        if (currentTime > hourBlock) {
+          $(".hour").addClass("past");
+        } else if (currentTime === hourBlock) {
+          $(".hour").addClass("present");
+        } else {
+          $(".hour").addClass("future");
+        }
+      })
+    </script>
+    
   </body>
 </html>
