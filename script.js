@@ -27,19 +27,21 @@ $(document).ready(function () { /* adding this makes sure javascript fully check
         } else {
           $(".description").addClass("future");
         }
-      })
+    })
 
-    // save buttons
+    // save
     var save = []; /* blank array for multiple data */
     var savePoint = JSON.parse(localStorage.getItem("savePoint"));
 
-    if (savePoint !== null) {/* excluding empty*/
+    /* activity 4.28 */
+    if (savePoint !== null) {/* excluding empty */
         save = savePoint;
     }
 
-    $(".btn").each(function() {
+    // buttons
+    $(".btn").each(function() { /* $(selector).each(function(index,element)) */
         for (var i = 0; i < save.length; i++) {
-            if($(this).attr("id") === save[i].location) {
+            if($(this).attr("saveBtn") === save[i].location) {
                 $(this).parent().prev().val(save[i].input);
             }
         }
@@ -47,17 +49,20 @@ $(document).ready(function () { /* adding this makes sure javascript fully check
 
     $(".btn").on("click",function() { /* click not onclick...*/ 
         var savedWords = $(this).parent().prev().val();
-        var wordsLocation = $(this).attr("id");
-        if (savedWords === "") {
+        var wordsLocation = $(this).attr("saveBtn");
+        if (savedWords === "") { /* inserting from empty to string*/
+            console.log(savedWords);
             return;
         }
 
         var savedInfo = {
-            input: savedWords,
-            location: wordsLocation
+            location: wordsLocation,
+            input: savedWords
+            
         };
 
         save.push(savedInfo);
         localStorage.setItem("savePoint", JSON.stringify(save));
+
     });
 });
